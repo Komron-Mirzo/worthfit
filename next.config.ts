@@ -5,10 +5,11 @@ const nextConfig: NextConfig = {
     ppr: true,
     clientSegmentCache: true,
     serverActions: {
-      bodySizeLimit: '10mb', // Increase to 10mb or whatever size you need
+      bodySizeLimit: '10mb',
     },
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
