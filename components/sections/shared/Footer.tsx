@@ -42,8 +42,6 @@ export function Footer() {
               width={1230}
               height={483}
               className="w-full h-auto object-contain"
-              priority
-              unoptimized={true}
             />
           </div>
         </div>

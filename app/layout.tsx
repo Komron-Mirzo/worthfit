@@ -20,6 +20,7 @@ const poppins = Poppins({
   weight: ['400', '600', '700', '800'],
   style: ['normal', 'italic'],
   variable: '--font-poppins',
+  preload: false,
 });
 
 // 2. Setup your custom local worthfit headline font
@@ -27,6 +28,7 @@ const worthfit = localFont({
   src: '/fonts/worthfit.woff2',
   variable: '--font-worthfit',
   display: 'swap',
+  preload: false, 
 });
 
 export default function RootLayout({

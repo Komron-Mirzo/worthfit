@@ -16,8 +16,6 @@ export function Hero() {
             alt="Worthfit by Steffi Hero Collage"
             width={1870}
             height={635}
-            unoptimized={true}
-            priority
             className="w-full h-auto object-contain rounded-[32px] md:rounded-[48px]"
           />
         </div>
