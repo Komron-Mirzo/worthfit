@@ -32,13 +32,18 @@ export async function POST(request: Request) {
     );
   }
 
+  // 1. Insert into database (this is the critical data we must wait for)
   await db.insert(joinlistTable).values({
     firstName: firstName.trim(),
     email: normalizedEmail,
     interest: interest ?? null,
   });
 
-  await sendJoinlistConfirmationEmail(firstName.trim(), normalizedEmail);
+  // 2. Fire the email in the background without blocking the HTTP response
+  sendJoinlistConfirmationEmail(firstName.trim(), normalizedEmail).catch((err) => {
+    console.error('Failed to send confirmation email in background:', err);
+  });
 
+  // 3. Return success instantly to the frontend!
   return NextResponse.json({ success: true }, { status: 201 });
 }
