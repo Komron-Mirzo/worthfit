@@ -2,13 +2,11 @@ import './globals.css';
 import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import localFont from 'next/font/local';
-import { getUser, getTeamForUser } from '@/lib/db/queries';
-import { SWRConfig } from 'swr';
 import { ScrollTriggerHashFix } from '@/components/ui/smooth-scroll-provider';
 import { JoinlistPopupProvider } from '@/components/ui/joinlist-popup-context';
 
 export const metadata: Metadata = {
-  title: 'Worthfit SaaS',
+  title: 'Worthfit',
   description: 'Build your fitness and SaaS future faster.'
 };
 
@@ -42,20 +40,10 @@ export default function RootLayout({
       className={`${poppins.variable} ${worthfit.variable} h-full`}
     >
       <body className="min-h-[100dvh] font-sans antialiased bg-background text-foreground flex flex-col">
-        <SWRConfig
-          value={{
-            fallback: {
-              '/api/user': getUser(),
-              '/api/team': getTeamForUser()
-            }
-          }}
-        >
-          <ScrollTriggerHashFix />
-          <JoinlistPopupProvider>
+        <ScrollTriggerHashFix />
+        <JoinlistPopupProvider>
           {children}
-          </JoinlistPopupProvider>
-          
-        </SWRConfig>
+        </JoinlistPopupProvider>
       </body>
     </html>
   );
