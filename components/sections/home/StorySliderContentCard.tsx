@@ -24,7 +24,7 @@ export default function StorySliderContentCard({ slide }: StorySliderContentCard
           alt={slide.title}
           fill
           className="object-cover"
-          priority
+          
         />
         {/* Dark overlay for readability */}
         <div

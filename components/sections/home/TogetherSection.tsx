@@ -148,7 +148,7 @@ export default function TogetherSection() {
                 width={1870}
                 height={300}
                 className="w-full h-auto object-contain"
-                priority
+                
               />
             </div>
 

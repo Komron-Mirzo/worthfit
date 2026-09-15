@@ -284,7 +284,7 @@ export default function StorySliderAnimatedSection({ slides }: Props) {
                                     alt="Let me show you story worlds!"
                                     fill
                                     style={{ objectFit: 'contain' }}
-                                    priority
+                                    
                                 />
                             </div>
 
@@ -299,7 +299,7 @@ export default function StorySliderAnimatedSection({ slides }: Props) {
                                     alt="Worthy mascot"
                                     fill
                                     style={{ objectFit: 'contain', objectPosition: 'bottom' }}
-                                    priority
+                                    
                                 />
                             </div>
 
@@ -416,7 +416,7 @@ export default function StorySliderAnimatedSection({ slides }: Props) {
                                     alt="Let me show you story worlds!"
                                     fill
                                     style={{ objectFit: 'contain' }}
-                                    priority
+                                    
                                 />
                             </div>
 
@@ -437,7 +437,7 @@ export default function StorySliderAnimatedSection({ slides }: Props) {
                                     alt="Worthy mascot"
                                     fill
                                     style={{ objectFit: 'contain', objectPosition: 'bottom' }}
-                                    priority
+                                    
                                 />
                             </div>
                         </div>

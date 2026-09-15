@@ -21,7 +21,6 @@ export default function BookReaderSection() {
                   alt="Speech bubble text"
                   fill
                   className="object-contain"
-                  priority
                 />
               </div>
 
@@ -32,7 +31,6 @@ export default function BookReaderSection() {
                   alt="Worthy character mascot"
                   fill
                   className="object-contain drop-shadow-lg"
-                  priority
                 />
               </div>
 
