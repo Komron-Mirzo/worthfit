@@ -8,21 +8,6 @@ export const config = {
 };
 
 export async function middleware(request: NextRequest) {
-  // --- HTTP BASIC AUTH PROTECTION ---
-  const basicAuth = request.headers.get('authorization');
-  
-  if (basicAuth) {
-    const authValue = basicAuth.split(' ')[1];
-    const [user, pwd] = atob(authValue).split(':');
-
-    if (user !== 'worthfit777' || pwd !== 'worthfit777') {
-      return unauthorizedResponse();
-    }
-  } else {
-    return unauthorizedResponse();
-  }
-  // ----------------------------------
-
   const sessionCookie = request.cookies.get('session');
 
   if (!sessionCookie) {
@@ -39,13 +24,4 @@ export async function middleware(request: NextRequest) {
     response.cookies.delete('session');
     return response;
   }
-}
-
-function unauthorizedResponse() {
-  return new NextResponse('Auth required.', {
-    status: 401,
-    headers: {
-      'WWW-Authenticate': 'Basic realm="Secure Area"',
-    },
-  });
 }
