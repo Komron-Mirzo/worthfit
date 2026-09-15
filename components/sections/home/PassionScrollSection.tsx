@@ -240,7 +240,7 @@ export default function PassionScrollSection() {
           {/* Steffy */}
           <img
             ref={steffyRef}
-            src="/images/passion-steffy.svg"
+            src="/images/passion-steffy.png"
             alt="Steffi"
             className="absolute left-1/2 top-[38%] z-10 w-[70vw] max-w-[320px] md:top-1/2 md:w-full md:max-w-[522px] md:max-h-[95vh] md:max-[1024px]:max-h-[80vh]"
           />
@@ -290,9 +290,9 @@ export default function PassionScrollSection() {
             ref={certWrapDesktopRef}
             className="hidden md:flex absolute -right-[200px] max-[1500px]:-right-[11vw] top-1/2 max-w-[581px] max-[1500px]:w-[30vw] flex-col gap-[87px]"
           >
-            <img src="/images/passion-certificate-01.svg" alt="Certificate of Achievement" className="max-w-[379px] w-[20vw] self-end" />
-            <img src="/images/passion-certificate-02.svg" alt="Certified Nutritionist" className="max-w-[379px] w-[20vw] self-start" />
-            <img src="/images/passion-certificate-03.svg" alt="Certificate of Completion" className="max-w-[379px] w-[20vw] self-end" />
+            <img src="/images/passion-certificate-01.png" alt="Certificate of Achievement" className="max-w-[379px] w-[20vw] self-end" />
+            <img src="/images/passion-certificate-02.png" alt="Certified Nutritionist" className="max-w-[379px] w-[20vw] self-start" />
+            <img src="/images/passion-certificate-03.png" alt="Certificate of Completion" className="max-w-[379px] w-[20vw] self-end" />
           </div>
 
           {/* certificates — mobile: pure-CSS infinite auto-scroll loop */}
@@ -306,13 +306,13 @@ export default function PassionScrollSection() {
               style={{ width: "max-content" }}
             >
               {/* Set 1 */}
-              <img src="/images/passion-certificate-01.svg" alt="Certificate of Achievement" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
-              <img src="/images/passion-certificate-02.svg" alt="Certified Nutritionist" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
-              <img src="/images/passion-certificate-03.svg" alt="Certificate of Completion" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-01.png" alt="Certificate of Achievement" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-02.png" alt="Certified Nutritionist" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-03.png" alt="Certificate of Completion" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
               {/* Set 2 — duplicate for seamless loop */}
-              <img src="/images/passion-certificate-01.svg" alt="" aria-hidden="true" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
-              <img src="/images/passion-certificate-02.svg" alt="" aria-hidden="true" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
-              <img src="/images/passion-certificate-03.svg" alt="" aria-hidden="true" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-01.png" alt="" aria-hidden="true" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-02.png" alt="" aria-hidden="true" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-03.png" alt="" aria-hidden="true" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
             </div>
           </div>
         </div>

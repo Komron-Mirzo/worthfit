@@ -198,14 +198,14 @@ export default function WorthfitScrollSection() {
               <div className="relative aspect-[629/768] w-full max-h-[768px] max-w-[629px] self-center">
                 <img
                   ref={girl01Ref}
-                  src="/images/steffy-girl-01.svg"
+                  src="/images/steffy-girl-01.png"
                   alt=""
                   className="h-full w-full object-contain"
                   draggable={false}
                 />
                 <img
                   ref={girl02Ref}
-                  src="/images/steffy-girl-02.svg"
+                  src="/images/steffy-girl-02.png"
                   alt=""
                   className="absolute inset-0 h-full w-full object-contain"
                   draggable={false}
@@ -277,14 +277,14 @@ export default function WorthfitScrollSection() {
             >
               <img
                 ref={mGirl01Ref}
-                src="/images/steffy-girl-01.svg"
+                src="/images/steffy-girl-01.png"
                 alt=""
                 className="h-full w-full object-contain"
                 draggable={false}
               />
               <img
                 ref={mGirl02Ref}
-                src="/images/steffy-girl-02.svg"
+                src="/images/steffy-girl-02.png"
                 alt=""
                 className="absolute inset-0 h-full w-full object-contain"
                 draggable={false}

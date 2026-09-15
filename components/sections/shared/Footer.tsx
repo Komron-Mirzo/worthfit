@@ -114,13 +114,16 @@ export function Footer() {
             <div className="flex flex-col space-y-2 flex-1">
               <span className="text-caps-16-smbld text-[#1A1A1A]/40 uppercase">Contacts</span>
               <p className="text-caps-26-smbld font-bold leading-relaxed tracking-wide text-gray-900 uppercase">
-                LOREM IPSUM STR.64 81927 STUTTGART
+                Die Ideenschmiede GmbH <br/>
+                Josefstraße 24 <br/>
+                82441 Ohlstadt
               </p>
               <p className="text-caps-26-smbld font-bold tracking-wide text-gray-900 lowercase">
-                WORTHFIT@GMAIL.COM
+                <Link href="mailto:hey@worthfitbysteffi.de" >hey@worthfitbysteffi.de</Link>
+                 
               </p>
               <p className="text-caps-26-smbld font-bold tracking-wide text-gray-900">
-                089 37319547
+                <Link href="tel:+4915510960203">+4915510960203</Link>
               </p>
             </div>
 
@@ -156,7 +159,7 @@ export function Footer() {
         <div className="w-full">
           <div className="flex flex-col xl:flex-row justify-between items-center md:items-start xl:items-center pt-8 border-t border-gray-100 gap-[30px] md:text-left">
             <p className="text-caps-16-smbld text-[#1A1A1A]/40 uppercase">
-              © WORTHFIT BY STEFFI 2025. MADE WITH LOVE BY DIEIDEENSCHMIEDE.IO
+              © WORTHFIT BY STEFFI 2025. MADE WITH LOVE BY <Link href="https://dieideenschmiede.io"> DIEIDEENSCHMIEDE.IO </Link>
             </p>
             <div className="grid grid-cols-2 gap-x-6 gap-y-2 md:text-left xl:flex xl:justify-end xl:gap-x-11">
               {legalLinks.map((link, idx) => (
