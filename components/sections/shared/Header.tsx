@@ -101,6 +101,7 @@ export function Header() {
             src="/icons/logo-white.svg" 
             alt="Worthfit Logo" 
             className="h-[65px] w-auto object-contain" 
+            loading="lazy"
           />
         </Link>
 
@@ -150,7 +151,8 @@ export function Header() {
             <img 
               src="/icons/logo-white.svg" 
               alt="Worthfit Logo" 
-              className="h-[65px] w-auto object-contain max-md:w-[121px]" 
+              className="h-[65px] w-auto object-contain max-md:w-[121px]"
+              loading="lazy" 
             />
           </Link>
           <button

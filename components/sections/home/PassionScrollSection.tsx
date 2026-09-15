@@ -161,8 +161,6 @@ export default function PassionScrollSection() {
           ease: "power2.inOut",
         }, 31);
 
-
-
         tl.to(steffyRef.current, { y: "-40vh", opacity: 0, duration: 3, ease: "power2.in" }, 31);
         tl.to(bubble5Ref.current, { y: "-15vh", opacity: 0, scale: 0.6, duration: 2, ease: "power2.in" }, 31);
       }, rootRef);
@@ -196,7 +194,12 @@ export default function PassionScrollSection() {
         <span className="text-caps-14-smbld rounded-full bg-white px-[12px] py-[4px]">
           ABOUT STEFFI
         </span>
-        <img src="/images/passion-top-heading.svg" alt="From passion to power" className="w-full z-1" />
+        <img 
+          src="/images/passion-top-heading.svg" 
+          alt="From passion to power" 
+          className="w-full z-1" 
+          loading="lazy" 
+        />
       </div>
 
       {/* II) Pinned, scroll-scrubbed stage */}
@@ -228,6 +231,7 @@ export default function PassionScrollSection() {
             ref={bgDotRef}
             src="/images/passion-bg-dot.svg"
             alt=""
+            loading="lazy"
             className="absolute left-1/2 top-[38%] w-[90vw] max-w-[90vw] z-0 md:top-1/2 md:w-full md:max-w-[1257px] md:!z-0 md:max-h-[95vh] md:max-[1024px]:max-h-[80vh]"
           />
 
@@ -242,6 +246,7 @@ export default function PassionScrollSection() {
             ref={steffyRef}
             src="/images/passion-steffy.png"
             alt="Steffi"
+            loading="lazy"
             className="absolute left-1/2 top-[38%] z-10 w-[70vw] max-w-[320px] md:top-1/2 md:w-full md:max-w-[522px] md:max-h-[95vh] md:max-[1024px]:max-h-[80vh]"
           />
 
@@ -250,6 +255,7 @@ export default function PassionScrollSection() {
             ref={bubble1Ref}
             src="/images/passion-bubble-01.svg"
             alt=""
+            loading="lazy"
             className="absolute left-[6%] top-[24%] z-20 w-[60vw] max-w-[260px] md:z-auto md:left-auto md:right-[120px] md:max-[1024px]:right-[10vw] md:top-[54px] md:max-w-[581px] md:w-[30vw] max-[768px]:right-[20px] max-[768px]:left-auto"
           />
 
@@ -258,6 +264,7 @@ export default function PassionScrollSection() {
             ref={bubble2Ref}
             src="/images/passion-bubble-02.svg"
             alt=""
+            loading="lazy"
             className="absolute bottom-[6%] z-20 w-[95vw] max-w-[340px] md:z-auto md:left-[50px] md:translate-x-0 md:top-[131px] md:bottom-auto md:max-w-[491px] md:max-[1024px]:left-[5vw] md:max-[1024px]:top-[7vw] md:w-[26vw] md:max-[1200px]:w-[33vw] md:max-[1024px]:w-[45vw] max-[768px]:right-auto max-[768px]:left-[220px] max-[500px]:left-[20px]"
           />
 
@@ -266,6 +273,7 @@ export default function PassionScrollSection() {
             ref={bubble3Ref}
             src="/images/passion-bubble-03.svg"
             alt=""
+            loading="lazy"
             className="absolute right-[20%] bottom-[25%] z-20 w-[80vw] max-w-[260px] md:right-auto md:bottom-[110px] md:left-[210px] md:w-[25vw] md:max-w-[472px] md:z-10 md:max-[1024px]:w-[40vw] md:max-[1024px]:left-[15vw] md:max-[1024px]:bottom-[10vw]"
           />
 
@@ -274,6 +282,7 @@ export default function PassionScrollSection() {
             ref={bubble4Ref}
             src="/images/passion-bubble-04.svg"
             alt=""
+            loading="lazy"
             className="absolute left-1/2 -translate-x-1/2 top-[30%] z-20 w-[70vw] max-w-[300px] md:z-auto md:left-[50px] md:translate-x-0 md:top-[132px] md:w-[38vw] md:max-w-[721px]"
           />
 
@@ -282,6 +291,7 @@ export default function PassionScrollSection() {
             ref={bubble5Ref}
             src="/images/passion-bubble-05.svg"
             alt=""
+            loading="lazy"
             className="absolute left-1/2 -translate-x-1/2 top-[30%] z-20 w-[62vw] max-w-[260px] md:left-auto md:translate-x-0 md:right-[130px] md:top-[233px] md:z-10 md:w-[26vw] md:max-w-[500px] max-[768px]:right-[20px] max-[768px]:left-auto max-[768px]:right-[20px] max-[768px]:!-right-[125px]"
           />
 
@@ -290,9 +300,9 @@ export default function PassionScrollSection() {
             ref={certWrapDesktopRef}
             className="hidden md:flex absolute -right-[200px] max-[1500px]:-right-[11vw] top-1/2 max-w-[581px] max-[1500px]:w-[30vw] flex-col gap-[87px]"
           >
-            <img src="/images/passion-certificate-01.png" alt="Certificate of Achievement" className="max-w-[379px] w-[20vw] self-end" />
-            <img src="/images/passion-certificate-02.png" alt="Certified Nutritionist" className="max-w-[379px] w-[20vw] self-start" />
-            <img src="/images/passion-certificate-03.png" alt="Certificate of Completion" className="max-w-[379px] w-[20vw] self-end" />
+            <img src="/images/passion-certificate-01.png" alt="Certificate of Achievement" loading="lazy" className="max-w-[379px] w-[20vw] self-end" />
+            <img src="/images/passion-certificate-02.png" alt="Certified Nutritionist" loading="lazy" className="max-w-[379px] w-[20vw] self-start" />
+            <img src="/images/passion-certificate-03.png" alt="Certificate of Completion" loading="lazy" className="max-w-[379px] w-[20vw] self-end" />
           </div>
 
           {/* certificates — mobile: pure-CSS infinite auto-scroll loop */}
@@ -306,13 +316,13 @@ export default function PassionScrollSection() {
               style={{ width: "max-content" }}
             >
               {/* Set 1 */}
-              <img src="/images/passion-certificate-01.png" alt="Certificate of Achievement" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
-              <img src="/images/passion-certificate-02.png" alt="Certified Nutritionist" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
-              <img src="/images/passion-certificate-03.png" alt="Certificate of Completion" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-01.png" alt="Certificate of Achievement" loading="lazy" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-02.png" alt="Certified Nutritionist" loading="lazy" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-03.png" alt="Certificate of Completion" loading="lazy" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
               {/* Set 2 — duplicate for seamless loop */}
-              <img src="/images/passion-certificate-01.png" alt="" aria-hidden="true" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
-              <img src="/images/passion-certificate-02.png" alt="" aria-hidden="true" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
-              <img src="/images/passion-certificate-03.png" alt="" aria-hidden="true" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-01.png" alt="" aria-hidden="true" loading="lazy" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-02.png" alt="" aria-hidden="true" loading="lazy" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
+              <img src="/images/passion-certificate-03.png" alt="" aria-hidden="true" loading="lazy" className="w-[60vw] max-w-[220px] flex-shrink-0" draggable={false} />
             </div>
           </div>
         </div>

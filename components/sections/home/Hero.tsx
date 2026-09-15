@@ -17,6 +17,7 @@ export function Hero() {
             width={1870}
             height={635}
             className="w-full h-auto object-contain rounded-[32px] md:rounded-[48px]"
+            loading="eager"
           />
         </div>
 

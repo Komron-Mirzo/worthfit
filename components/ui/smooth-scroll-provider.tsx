@@ -100,7 +100,7 @@ function createLoader(): HTMLElement {
       }
     </style>
 
-    <img id="sjl-logo" src="/icons/logo-white.svg" alt="Loading" />
+    <img id="sjl-logo" src="/icons/logo-white.svg" alt="Loading" loading="lazy" />
 
     <div id="sjl-track">
       <div id="sjl-bar"></div>
