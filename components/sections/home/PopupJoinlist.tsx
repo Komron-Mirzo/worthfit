@@ -47,6 +47,13 @@ export default function WorthfitJoinlistPopup({ onClose }: WorthfitJoinlistPopup
       }
 
       setSubmitted(true);
+
+      // fire-and-forget — success screen already shown, don't block on this
+      fetch('/api/joinlist/confirm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, email }),
+      }).catch(() => { });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
     } finally {
@@ -55,11 +62,11 @@ export default function WorthfitJoinlistPopup({ onClose }: WorthfitJoinlistPopup
   }
 
   return (
-<div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1A1A1AB2] p-[20px] max-[768px]:items-end max-[768px]:p-0">
-  <div className="flex w-[1020px] max-h-[840px] h-full max-w-full overflow-y-auto scrollbar-none gap-[40px] rounded-[75px] bg-[#F3F3F3] p-[15px] max-[1200px]:m-[20px] max-[768px]:m-0 max-[768px]:max-h-[900px] max-[768px]:rounded-b-none max-[768px]:rounded-t-[50px] max-[768px]:p-[20px]" style={{
-          scrollbarWidth: 'none', /* Firefox */
-          msOverflowStyle: 'none',  /* IE and Edge */
-        }}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1A1A1AB2] p-[20px] max-[768px]:items-end max-[768px]:p-0">
+      <div className="flex w-[1020px] max-h-[840px] h-full max-w-full overflow-y-auto scrollbar-none gap-[40px] rounded-[75px] bg-[#F3F3F3] p-[15px] max-[1200px]:m-[20px] max-[768px]:m-0 max-[768px]:max-h-[900px] max-[768px]:rounded-b-none max-[768px]:rounded-t-[50px] max-[768px]:p-[20px]" style={{
+        scrollbarWidth: 'none', /* Firefox */
+        msOverflowStyle: 'none',  /* IE and Edge */
+      }}>
         {!submitted ? (
           // ==========================================
           // I) FORM DIV
@@ -133,11 +140,10 @@ export default function WorthfitJoinlistPopup({ onClose }: WorthfitJoinlistPopup
                     return (
                       <label
                         key={option.value}
-                        className={`flex flex-1 cursor-pointer items-center rounded-[10px] border-[1.5px] px-[10px] py-[20px] max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:gap-[15px] ${
-                          active
+                        className={`flex flex-1 cursor-pointer items-center rounded-[10px] border-[1.5px] px-[10px] py-[20px] max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:gap-[15px] ${active
                             ? 'border-[#FF7DA8] bg-[#FF7DA8]/10'
                             : 'border-[#1a1a1a]/15 bg-white'
-                        }`}
+                          }`}
                       >
                         <input
                           type="radio"
@@ -201,7 +207,7 @@ export default function WorthfitJoinlistPopup({ onClose }: WorthfitJoinlistPopup
           // II) SUCCESS DIV
           // ==========================================
           <div className="flex w-full h-full flex-col gap-[40px]">
-            <div className="flex h-[45%] flex-1 flex-col items-center justify-start text-center p-[20px] max-[768px]:p-0 max-[768px]:h-[40%]">
+            <div className="flex flex-[0_1_45%] min-h-0 flex-col items-center justify-start text-center p-[20px] max-[768px]:p-0">
               <button
                 type="button"
                 onClick={onClose}
@@ -234,7 +240,7 @@ export default function WorthfitJoinlistPopup({ onClose }: WorthfitJoinlistPopup
               </Button>
             </div>
 
-            <div className="relative h-[55%] max-h-[40vh] w-full overflow-hidden rounded-[60px] border-[5px] border-white max-[768px]:!h-[55%] max-[768px]:rounded-[40px] max-[768px]:max-h-[60vh]">
+            <div className="relative flex-[0_1_55%] min-h-[160px] max-h-[40vh] w-full overflow-hidden rounded-[60px] border-[5px] border-white max-[768px]:rounded-[40px] max-[768px]:max-h-[60vh]">
               <img
                 src="/images/worthfit-popup-success.jpg"
                 alt="Welcome to Worthfit"

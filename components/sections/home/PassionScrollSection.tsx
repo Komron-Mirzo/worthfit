@@ -48,8 +48,10 @@ export default function PassionScrollSection() {
           { scale: 0, transformOrigin: "50% 50%" }
         );
         gsap.set(certWrapDesktopRef.current, { xPercent: -50, yPercent: 120 });
-        // Desktop: hide below viewport. Height is 50vw of 110vw width element.
-        gsap.set(halfCircleRef.current, { xPercent: -50, y: window.innerHeight });
+        // Anchored to bottom-0 of the pinned (h-screen) section. yPercent is
+        // relative to the element's own height, so this is viewport-height
+        // agnostic — no window.innerHeight math needed.
+        gsap.set(halfCircleRef.current, { xPercent: -50, yPercent: 100 });
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -87,12 +89,10 @@ export default function PassionScrollSection() {
 
         tl.to(bubble5Ref.current, { scale: 1, duration: 2, ease: "back.out(1.5)" }, 24);
 
-        // Animate half circle up from below. Target y so top of half circle
-        // sits at 50% of viewport (fills bottom half of screen).
-        // Height = 110vw * 0.5 = 55vw. We want bottom edge at viewport bottom,
-        // so y = innerHeight - halfCircleHeight.
+        // Slide the halfcircle up to flush-bottom. yPercent: 0 always lands
+        // it exactly at bottom-0 regardless of viewport height.
         tl.to(halfCircleRef.current, {
-          y: () => window.innerHeight - window.innerWidth * 1.1 * 0.5,
+          yPercent: 0,
           duration: 5.5,
           ease: "power2.inOut",
         }, 28.5);
@@ -115,8 +115,8 @@ export default function PassionScrollSection() {
           { scale: 0, transformOrigin: "50% 50%" }
         );
         gsap.set(certWrapMobileRef.current, { opacity: 0, y: 40 });
-        // Mobile: hide below viewport. Height = 110vw * 0.5 = 55vw.
-        gsap.set(halfCircleRef.current, { xPercent: -50, y: window.innerHeight });
+        // Same viewport-height-agnostic anchor as desktop.
+        gsap.set(halfCircleRef.current, { xPercent: -50, yPercent: 100 });
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -153,10 +153,9 @@ export default function PassionScrollSection() {
 
         tl.to(bubble5Ref.current, { scale: 1, duration: 1, ease: "back.out(1.5)" }, 28);
 
-        // Animate half circle up. Height = 110vw * 0.5.
-        // y target = innerHeight - halfCircleHeight so bottom sits flush with viewport bottom.
+        // Slide the halfcircle up to flush-bottom, height-agnostic.
         tl.to(halfCircleRef.current, {
-          y: () => window.innerHeight - window.innerWidth * 1.1 * 0.5, // 80vw height
+          yPercent: 0,
           duration: 3,
           ease: "power2.inOut",
         }, 31);
@@ -210,13 +209,15 @@ export default function PassionScrollSection() {
         {/*
           True half circle: width 110vw, height = 55vw (half of width),
           border-radius curves only the top edge.
-          Starts hidden below viewport via GSAP y: window.innerHeight.
-          -translate-x-1/2 is handled by GSAP xPercent: -50.
+          Anchored to bottom-0 of this h-screen section, so it's always
+          flush with the viewport bottom regardless of viewport height.
+          GSAP drives it purely with yPercent (relative to its own box),
+          so no per-breakpoint bottom-offset hacks are needed anymore.
         */}
         <div
           ref={halfCircleRef}
           id="story-worlds"
-          className="pointer-events-none absolute left-1/2 -translate-x-1/2 bg-[#FF7DA8] z-0 w-[110vw] h-[55vw] md:h-[55vw] min-[2200px]:-bottom-[13vw] min-[1920px]:-bottom-[10vw] min-[1800px]:-bottom-[20vw] max-[1024px]:bottom-[35vw] max-[900px]:bottom-[48vw] max-[806px]:bottom-[60vw] max-[768px]:bottom-[50vw] max-[725px]:bottom-[70vw] max-[630px]:bottom-[90vw] max-[560px]:bottom-[100vw] max-[535px]:bottom-[118vw] max-[480px]:bottom-[135vw] max-[450px]:bottom-[150vw] max-[410px]:bottom-[170vw] max-[380px]:bottom-[188vw] max-[350px]:bottom-[200vw] max-[335px]:bottom-[700px]"
+          className="pointer-events-none absolute left-1/2 -bottom-[2px] bg-[#FF7DA8] z-0 w-[110vw] h-[55vw]"
           style={{
             borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
           }}
@@ -298,7 +299,7 @@ export default function PassionScrollSection() {
           {/* certificates — desktop: vertical strip that travels bottom -> top */}
           <div
             ref={certWrapDesktopRef}
-            className="hidden md:flex absolute -right-[200px] max-[1500px]:-right-[11vw] top-1/2 max-w-[581px] max-[1500px]:w-[30vw] flex-col gap-[87px]"
+            className="hidden md:flex absolute -right-[200px] max-[1500px]:-right-[11vw] top-1/2 max-w-[581px] max-[1500px]:w-[30vw] flex-col gap-[87px] w-full"
           >
             <img src="/images/passion-certificate-01.png" alt="Certificate of Achievement" loading="lazy" className="max-w-[379px] w-[20vw] self-end" />
             <img src="/images/passion-certificate-02.png" alt="Certified Nutritionist" loading="lazy" className="max-w-[379px] w-[20vw] self-start" />
