@@ -169,19 +169,6 @@ export default function WorthfitJoinlistPopup({ onClose }: WorthfitJoinlistPopup
                 </div>
 
                 {error && <p className="text-body-14 mb-[10px] text-red-500">{error}</p>}
-
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="text-btn bg-primary mb-[10px] w-full rounded-full py-[18px] text-white shadow-[4px_4px_0px_0px_#1A1A1A] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[6px_6px_0px_0px_#1A1A1A] disabled:opacity-60 h-[65px]"
-                >
-                  {submitting ? 'Joining...' : 'Join the Waitlist'}
-                </button>
-
-                <p className="text-body-14 mb-[20px] text-center text-[#1a1a1a]">
-                  No spam. Just Worthfit updates, early access &amp; a little glow.
-                </p>
-
                 <label className="text-body-14 flex cursor-pointer items-start text-[#1a1a1a]/40 mb-[20px]">
                   <span className="relative mr-[15px] mt-[2px] inline-flex h-[23px] w-[23px] shrink-0 items-center justify-center rounded-[5px] border-[1.5px] border-[#1a1a1a]/15 bg-transparent has-[:checked]:border-[#FF7DA8] has-[:checked]:bg-[#FF7DA8]">
                     <input
@@ -199,6 +186,20 @@ export default function WorthfitJoinlistPopup({ onClose }: WorthfitJoinlistPopup
                   I agree that Worthfit may use my email address to send me updates about the
                   launch and early access. With Privacy Policy linked.
                 </label>
+
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="text-btn bg-primary mb-[10px] w-full rounded-full py-[18px] text-white shadow-[4px_4px_0px_0px_#1A1A1A] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[6px_6px_0px_0px_#1A1A1A] disabled:opacity-60 h-[65px]"
+                >
+                  {submitting ? 'Joining...' : 'Join the Waitlist'}
+                </button>
+
+                <p className="text-body-14 mb-[20px] text-center text-[#1a1a1a]">
+                  No spam. Just Worthfit updates, early access &amp; a little glow.
+                </p>
+
+          
               </form>
             </div>
           </>
