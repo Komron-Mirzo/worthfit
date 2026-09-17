@@ -2,10 +2,11 @@
 
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+
 const FROM_ADDRESS = 'WorthFit <hey@worthfitbysteffi.de>';
 
 export async function sendContactEmail(formData: FormData) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const name = formData.get('name') as string;
   const surname = formData.get('surname') as string;
   const phone = formData.get('phone') as string;
@@ -97,6 +98,7 @@ export async function sendContactEmail(formData: FormData) {
 }
 
 export async function sendJoinlistConfirmationEmail(firstName: string, email: string) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const { error } = await resend.emails.send({
       from: FROM_ADDRESS,
